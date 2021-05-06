@@ -16,10 +16,10 @@ add_action( 'admin_menu', 'admin_nemateria_plugin' );
 	);
     }
 
-    function nemateria_plugin_page() {
-        require_once('content-admin.php');
-        load_nemateria_plugin_page();
-    }
+function nemateria_plugin_page() {
+    require_once('content-admin.php');
+    load_nemateria_plugin_page();
+}
 
 add_action('admin_enqueue_scripts', 'reg_stylesheets');
 

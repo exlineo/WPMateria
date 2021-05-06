@@ -144,3 +144,5 @@ function load_nemateria_plugin_page()
 <?php
 
 }
+
+?>

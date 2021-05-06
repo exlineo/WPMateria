@@ -14,6 +14,21 @@ if (! defined('ABSPATH')){
 
 function all_page(){
     require_once('admin/admin.php');
+    require_once('data/nemateria-bdd.php');
 }
 
 all_page();
+
+/**
+ * Activation of the plugin with the BDD
+ */
+if ( class_exists('NemateriaBdd')){
+    $nemateria = new NemateriaBdd();
+    // activation
+    register_activation_hook(__FILE__, array($nemateria, 'active'));
+    
+    // deactivation
+    register_deactivation_hook(__FILE__, array($nemateria, 'deactivate'));
+    
+    // uninstall
+}
