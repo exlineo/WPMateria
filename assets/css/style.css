@@ -1,0 +1,199 @@
+* {box-sizing: border-box;}
+
+
+.pagenem {
+    width: 100%;
+    height: 850px;
+    display: flex;
+    flex-direction: row;
+}
+
+.slideLeftnem {
+    width: 10%;
+    height: 850px;
+    background-color: #F9E124;
+}
+
+.slideRightnem {
+    width: 90%;
+    background-color: white;
+}
+
+.logo_nemateria_v {
+    background-image: url("http: //localhost/NemateriaV 2px /wordpress/wp content/plugins/nemateria/assets/img/Logo_Nemateria_v.png");
+}
+
+ /*boutons reset et enrigistrer/ /option bootstrap revisiter*/
+
+.controlsnem {
+    float: right;
+}
+
+.controlsnem button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.controlsnem button:hover {
+    background: #ccc;
+}
+
+ /* Navbar */
+
+.tabnem {
+    margin-top: 45px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabnem button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tabnem button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tabnem button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabnemcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tabnemcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* section Serveur */
+.servboxnem {
+    border: 1px solid black;
+    height: 150px;
+}
+
+.servboxnem h3 {
+    margin-left: 5px;
+}
+
+.separateservbox {
+    position: absolute;
+    width: 150px;
+    border: 1px solid black;
+    transform: rotate(90deg);
+    left: 50%;
+    top: 162px;
+}
+  
+
+#urlneminput {
+    margin-left: 5px;
+    border-radius: 5px;
+}
+  
+#idneminput {
+    margin-left: 505px;
+    border-radius: 5px;
+}
+  
+#pwneminput {
+    margin-left: 735px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* ajout d'une base de données dans Serveur */
+/* Style the button that is used to open and close the collapsible content */
+.collapsibleaddserver {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+  
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsibleaddserver:hover {
+    background-color: #ccc;
+}
+  
+/* Style the collapsible content. Note: hidden by default */
+.contentbddnem {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+
+/* section Moissonnage */
+#leftsidemoiss {
+    display: inline-block;
+    border-right: 1px solid black;
+    width: 300px;
+    height: 748px;
+}
+
+#rightsidemoiss {
+    display: inline-block;
+}
+
+#bddnemselection {
+    width: 250px;
+}
+
+#rightsidemoiss h3 {
+    margin-left: 5px;
+    margin-top: 0;
+}
+
+#nembddselected {
+    margin-left: 5px;
+}
+
+/* section Aide */
+#aidenemselection {
+    width: 500px;
+}
+
+/* Footer */
+.footernem {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
