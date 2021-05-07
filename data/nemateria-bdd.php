@@ -5,6 +5,8 @@ class NemateriaBdd
     function active()
     {
        data_server();
+       data_collection();
+       data_notice();
     }
 
     function deactivate()
@@ -74,7 +76,7 @@ function data_notice(){
     
     $sql = "CREATE TABLE IF NOT EXISTS`{$wpdb->base_prefix}nemateria_notice` (
   idNotice int AUTO_INCREMENT NOT NULL,
-  idCollection int NOT NULL,
+  collectionId int NOT NULL,
   dateNotice date NULL,
   prefixNotice varchar(255) NULL,
   metadonnees varchar(255) NOT NULL,
@@ -82,9 +84,9 @@ function data_notice(){
   descriptionNotice varchar(255) NOT NULL,
   formatNotice varchar(255) NOT NULL,
   droitsNotice varchar(255)NOT NULL,
-  PRIMARY KEY  (idNotice)
-  KEY Utilisateur_Echange1_FK (idCollection),
-  CONSTRAINT Utilisateur_Echange1_FK FOREIGN KEY (idCollection) REFERENCES `{$wpdb->base_prefix}nemateria_collection` (idCollection),
+  PRIMARY KEY  (idNotice),
+  KEY FK_CollectionId (collectionId),
+  CONSTRAINT FK_CollectionId FOREIGN KEY (collectionId) REFERENCES `{$wpdb->base_prefix}nemateria_collection` (idCollection)
 ) $charset_collate;";
 
 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');

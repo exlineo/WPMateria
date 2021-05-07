@@ -14,7 +14,7 @@ function load_nemateria_plugin_page()
 
 				<div class="controlsnem">
 					<form>
-						<button type="submit">Reset</button>
+						<button type="reset">Reset</button>
 						<button type="submit">Enregistrer</button>
 					</form>
 				</div>
@@ -61,36 +61,52 @@ function load_nemateria_plugin_page()
 
 				<section id="Serveurnem" class="tabnemcontent">
 					<article class="servboxnem">
-						<h3>Adresse de la base de données</h3>
-						<input type="url" placeholder="url" id="urlneminput">
-						<hr class="separateservbox">
-						<input type="text" placeholder="Identifiant" id="idneminput"></br>
-						<input type="password" placeholder="Mot de passe" id="pwneminput">
+						<form>
+							<h3>Adresse de la base de données</h3>
+							<input type="url" placeholder="url" id="urlneminput">
+							<hr class="separateservbox">
+							<input type="text" placeholder="Identifiant" id="idneminput"></br>
+							<input type="password" placeholder="Mot de passe" id="pwneminput">
+							<input type="submit" value="Submit">
+							<input type="reset" value="Reset">  							
+						</form>
 					</article>
 					</br>
 					<article>
 						<button type="button" class="collapsibleaddserver">Ajouter une base de données</button>
 						<div class="contentbddnem">
-							<h3>Adresse de la base de données</h3>
-							<input type="url" placeholder="url" id="urlneminput">
-							<input type="text" placeholder="Identifiant" id="idneminput"></br>
-							<input type="password" placeholder="Mot de passe" id="pwneminput">
+							<form>
+								<h3>Adresse de la base de données</h3>
+								<input type="url" placeholder="url" id="urlneminput">
+								<input type="text" placeholder="Identifiant" id="idneminput"></br>
+								<input type="password" placeholder="Mot de passe" id="pwneminput">
+								<input type="submit" value="Submit">
+								<input type="reset" value="Reset">  
+							</form>
 							<div>
 								<button type="button" class="collapsibleaddserver">Ajouter une base de données</button>
 								<div class="contentbddnem">
-									<h3>Adresse de la base de données</h3>
-									<input type="url" placeholder="url" id="urlneminput">
-									<input type="text" placeholder="Identifiant" id="idneminput"></br>
-									<input type="password" placeholder="Mot de passe" id="pwneminput">
+									<form>
+										<h3>Adresse de la base de données</h3>
+										<input type="url" placeholder="url" id="urlneminput">
+										<input type="text" placeholder="Identifiant" id="idneminput"></br>
+										<input type="password" placeholder="Mot de passe" id="pwneminput">
+										<input type="submit" value="Submit">
+										<input type="reset" value="Reset">  
+									</form>
 								</div>
 								<div>
 									<div>
 										<button type="button" class="collapsibleaddserver">Ajouter une base de données</button>
 										<div class="contentbddnem">
-											<h3>Adresse de la base de données</h3>
-											<input type="url" placeholder="url" id="urlneminput">
-											<input type="text" placeholder="Identifiant" id="idneminput"></br>
-											<input type="password" placeholder="Mot de passe" id="pwneminput">
+											<form>
+												<h3>Adresse de la base de données</h3>
+												<input type="url" placeholder="url" id="urlneminput">
+												<input type="text" placeholder="Identifiant" id="idneminput"></br>
+												<input type="password" placeholder="Mot de passe" id="pwneminput">
+												<input type="submit" value="Submit">
+												<input type="reset" value="Reset">  
+											</form>
 										</div>
 									</div>
 								</div>

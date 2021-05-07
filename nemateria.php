@@ -31,4 +31,5 @@ if ( class_exists('NemateriaBdd')){
     register_deactivation_hook(__FILE__, array($nemateria, 'deactivate'));
     
     // uninstall
+    //register_uninstall_hook(__FILE__, array($nemateria, 'uninstall'));
 }
