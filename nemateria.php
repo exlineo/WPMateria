@@ -8,6 +8,7 @@
     License: GNU GPL2
     */
 
+// si la constante ABSPATH n’est pas définie (autrement dit si quelqu’un cherche à accéder à ce fichier en-dehors de WordPress) on coupe court à tout
 if (! defined('ABSPATH')){
     die;
 }
@@ -28,8 +29,8 @@ if ( class_exists('NemateriaBdd')){
     register_activation_hook(__FILE__, array($nemateria, 'active'));
     
     // deactivation
-    register_deactivation_hook(__FILE__, array($nemateria, 'deactivate'));
+    //register_deactivation_hook(__FILE__, array($nemateria, 'deactivate'));
     
     // uninstall
-    //register_uninstall_hook(__FILE__, array($nemateria, 'uninstall'));
+    register_uninstall_hook(__FILE__, array($nemateria, 'uninstall'));
 }

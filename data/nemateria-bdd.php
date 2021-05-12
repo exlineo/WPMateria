@@ -1,7 +1,9 @@
 <?php
 
+// Classe contenant les fonctions permettant d'activer/désactiver/désinstaller les BDD du plugin lors de son installation/désinstallation
 class NemateriaBdd
 {
+    // Active la création des tables mentionnées lors de l'activation du plugin 
     function active()
     {
        data_server();
@@ -9,20 +11,21 @@ class NemateriaBdd
        data_notice();
     }
 
+    // Lors de la désactivation du plugin les tables créées précédemment ne sont pas supprimées
     function deactivate()
     {
-        bdd_deactivate();
+        //bdd_deactivate();
     }
     
+    // Supprime les tables créées précédemment lors de la désinstallation du plugin
     function uninstall()
     {
-        // delete CPT
-        // delete all the plugin data from the DB   
+        bdd_uninstall();
     }
 }
 
 /**
- * Creation of Table Server
+ * Creation de la table Server
  */
 function data_server(){
     global $wpdb;
@@ -42,7 +45,7 @@ function data_server(){
   }
 
 /**
- * Creation of Table Collection
+ * Creation de la table Collection
  */
 function data_collection(){
   global $wpdb;
@@ -68,7 +71,7 @@ dbDelta($sql);
 }
 
 /**
- * Creation of Table Notice
+ * Creation de la table Notice
  */
 function data_notice(){
   global $wpdb;
@@ -94,9 +97,9 @@ dbDelta($sql);
 }
 
 /**
- * Delet all table
+ * Supprimer toutes les tables
  */
-function bdd_deactivate(){
+function bdd_uninstall(){
     global $wpdb;
     $wp_nemateriabdd_server = $wpdb->prefix . "nemateriabdd_server";
     $wp_nemateria_collection = $wpdb->prefix . "nemateria_collection";
