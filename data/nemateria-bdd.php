@@ -14,13 +14,13 @@ class NemateriaBdd
     // Lors de la désactivation du plugin les tables créées précédemment ne sont pas supprimées
     function deactivate()
     {
-        //bdd_deactivate();
+        bdd_deactivate();
     }
     
     // Supprime les tables créées précédemment lors de la désinstallation du plugin
     function uninstall()
     {
-        bdd_uninstall();
+        //bdd_uninstall();
     }
 }
 
@@ -36,7 +36,7 @@ function data_server(){
     adresseServeur varchar(100) NOT NULL,
     cleSecurite varchar(100) NOT NULL,
     valeurSecurite varchar(100) NOT NULL,
-    statutUtilisateur bool NOT NULL,
+    statutUtilisateur bool NULL,
     PRIMARY KEY  (idServeur)
   ) $charset_collate;";
   
@@ -99,7 +99,7 @@ dbDelta($sql);
 /**
  * Supprimer toutes les tables
  */
-function bdd_uninstall(){
+function bdd_deactivate(){
     global $wpdb;
     $wp_nemateriabdd_server = $wpdb->prefix . "nemateriabdd_server";
     $wp_nemateria_collection = $wpdb->prefix . "nemateria_collection";

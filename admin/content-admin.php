@@ -3,7 +3,7 @@
 // Appeler le contenu HTML de la page Admin
 function load_nemateria_plugin_page()
 {
-
+require_once('functions_admin.php'); // Appel de la fonction d'insertion pour le formulaire de l'onglet Serveur
 ?>
 	<main>
 		<section class="pagenem">
@@ -18,7 +18,7 @@ function load_nemateria_plugin_page()
 
 				<!-- Boutons de la barre supérieure permettant l'enregistrement/suppression global(e) des modifications apportées -->
 				<div class="controlsnem">
-					<form>
+					<form action="settings.php" method="POST">
 						<button type="reset">Reset</button>
 						<button type="submit">Enregistrer</button>
 					</form>
@@ -69,12 +69,12 @@ function load_nemateria_plugin_page()
 				<!-- ONGLET PARAMETRES DU SERVEUR -->
 				<section id="serveurNem" class="tabnemcontent">
 					<article class="servboxnem">
-						<form>
+						<form action="" method="POST">
 							<h3>Adresse de la base de données</h3>
-							<input type="url" placeholder="url" id="urlneminput" class="nemUrl">
+							<input type="url" placeholder="url" id="urlneminput" class="nemUrl" name="urlServer">
 							<hr class="separateservbox">
-							<input type="text" placeholder="Identifiant" id="idneminput"></br>
-							<input type="password" placeholder="Mot de passe" id="pwneminput">
+							<input type="text" placeholder="Clé de sécurité" id="idneminput" name="cleSecurite"></br>
+							<input type="password" placeholder="Valeur de sécurité" id="pwneminput" name="valeurSecurite">
 							<input type="submit" value="Submit">
 							<input type="reset" value="Reset">  
 							<?php submit_button () ; ?>							
@@ -87,11 +87,11 @@ function load_nemateria_plugin_page()
 					<article>
 						<button type="button" class="collapsibleaddserver">Ajouter une base de données</button>
 						<div class="contentbddnem">
-							<form>
+							<form action="" method="POST">
 								<h3>Adresse de la base de données</h3>
-								<input type="url" placeholder="url" id="urlneminput">
-								<input type="text" placeholder="Identifiant" id="idneminput"></br>
-								<input type="password" placeholder="Mot de passe" id="pwneminput">
+								<input type="url" placeholder="url" id="urlneminput" name="urlServer">
+								<input type="text" placeholder="Clé de sécurité" id="idneminput" name="cleSecurite"></br>
+								<input type="password" placeholder="Valeur de sécurité" id="pwneminput" name="valeurSecurite">
 								<input type="submit" value="Submit">
 								<input type="reset" value="Reset">  
 								<?php submit_button () ; ?>
@@ -100,11 +100,11 @@ function load_nemateria_plugin_page()
 							<div>
 								<button type="button" class="collapsibleaddserver">Ajouter une base de données</button>
 								<div class="contentbddnem">
-									<form>
+									<form action="" method="POST">
 										<h3>Adresse de la base de données</h3>
-										<input type="url" placeholder="url" id="urlneminput">
-										<input type="text" placeholder="Identifiant" id="idneminput"></br>
-										<input type="password" placeholder="Mot de passe" id="pwneminput">
+										<input type="url" placeholder="url" id="urlneminput" name="urlServer">
+										<input type="text" placeholder="Clé de sécurité" id="idneminput" name="cleSecurite"></br>
+										<input type="password" placeholder="Valeur de sécurité" id="pwneminput" name="valeurSecurite">
 										<input type="submit" value="Submit">
 										<input type="reset" value="Reset">  
 										<?php submit_button () ; ?>
@@ -115,9 +115,9 @@ function load_nemateria_plugin_page()
 										<div class="contentbddnem">
 											<form>
 												<h3>Adresse de la base de données</h3>
-												<input type="url" placeholder="url" id="urlneminput">
-												<input type="text" placeholder="Identifiant" id="idneminput"></br>
-												<input type="password" placeholder="Mot de passe" id="pwneminput">
+												<input type="url" placeholder="url" id="urlneminput" name="urlServer">
+												<input type="text" placeholder="Clé de sécurité" id="idneminput" name="cleSecurite"></br>
+												<input type="password" placeholder="Valeur de sécurité" id="pwneminput" name="valeurSecurite">
 												<input type="submit" value="Submit">
 												<input type="reset" value="Reset">  
 												<?php submit_button () ; ?>
@@ -172,6 +172,8 @@ function load_nemateria_plugin_page()
 	</main>
 
 <?php
+
+insert_server(htmlspecialchars($_POST['urlServer']),htmlspecialchars($_POST['cleSecurite']), htmlspecialchars($_POST['valeurSecurite']));
 
 }
 
