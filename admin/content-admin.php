@@ -3,7 +3,7 @@
 // Appeler le contenu HTML de la page Admin
 function load_nemateria_plugin_page()
 {
-require_once('functions_admin.php'); // Appel de la fonction d'insertion pour le formulaire de l'onglet Serveur
+require_once(plugin_dir_path(__FILE__).'../functions/functions_admin.php'); // Appel de la fonction d'insertion pour le formulaire de l'onglet Serveur
 ?>
 	<main>
 		<section class="pagenem">
@@ -135,11 +135,9 @@ require_once('functions_admin.php'); // Appel de la fonction d'insertion pour le
 						<h3>Base de données sélectionnée :</h3>
 						<select id="bddnemselection">
 							<option value="0">Base de données</option>
-							<option value="1"></option>
-							<option value="2"></option>
-							<option value="3"></option>
-							<option value="4"></option>
-							<option value="5"></option>
+							<?php foreach(recup_server() as $value) { ?>
+								<option value="<?= $value->idServeur ?>"><?= $value->adresseServeur ?></option>
+							<?php } ?>
 						</select>
 					</article>
 					<article id="rightsidemoiss">
